@@ -1,0 +1,112 @@
+use time
+
+
+fn FileInfoToDirEntry  (info: FileInfo) -> DirEntry { EXT }
+
+fn Glob  (fsys: FS, pattern: string) -> Result<[string]> { EXT }
+
+fn ReadDir  (fsys: FS, name: string) -> Result<[DirEntry]> { EXT }
+
+fn ReadFile  (fsys: FS, name: string) -> Result<[byte]> { EXT }
+
+fn Stat  (fsys: FS, name: string) -> Result<FileInfo> { EXT }
+
+fn Sub  (fsys: FS, dir: string) -> Result<FS> { EXT }
+
+fn ValidPath  (name: string) -> bool { EXT }
+
+fn WalkDir  (fsys: FS, root: string, fn_: WalkDirFunc) -> error { EXT }
+
+impl (self: FileMode) {
+
+fn IsDir  () -> bool { EXT }
+
+fn IsRegular  () -> bool { EXT }
+
+fn Perm  () -> FileMode { EXT }
+
+fn String  () -> string { EXT }
+
+fn Type  () -> FileMode { EXT }
+
+}
+
+impl (self: PathError) {
+
+fn Error  () -> string { EXT }
+
+fn Timeout  () -> bool { EXT }
+
+fn Unwrap  () -> error { EXT }
+
+}
+
+type WalkDirFunc = fn (path: string, d: DirEntry, err: error) -> error
+
+struct FileMode(uint32)
+
+interface DirEntry {
+
+  fn Name () -> string
+  fn IsDir () -> bool
+  fn Type () -> FileMode
+  fn Info () -> Result<FileInfo>
+}
+
+interface FS {
+
+  fn Open (name: string) -> Result<File>
+}
+
+interface File {
+
+  fn Stat () -> Result<FileInfo>
+  fn Read (param0: [byte]) -> Result<int>
+  fn Close () -> error
+}
+
+interface FileInfo {
+
+  fn Name () -> string
+  fn Size () -> int64
+  fn Mode () -> FileMode
+  fn ModTime () -> time.Time
+  fn IsDir () -> bool
+  fn Sys () -> any
+}
+
+interface GlobFS {
+impl FS
+  fn Glob (pattern: string) -> Result<[string]>
+}
+
+struct PathError{
+  Op: string,
+  Path: string,
+  Err: error
+}
+
+interface ReadDirFS {
+impl FS
+  fn ReadDir (name: string) -> Result<[DirEntry]>
+}
+
+interface ReadDirFile {
+impl File
+  fn ReadDir (n: int) -> Result<[DirEntry]>
+}
+
+interface ReadFileFS {
+impl FS
+  fn ReadFile (name: string) -> Result<[byte]>
+}
+
+interface StatFS {
+impl FS
+  fn Stat (name: string) -> Result<FileInfo>
+}
+
+interface SubFS {
+impl FS
+  fn Sub (dir: string) -> Result<FS>
+}

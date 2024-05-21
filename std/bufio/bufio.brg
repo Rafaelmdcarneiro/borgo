@@ -1,0 +1,117 @@
+use io
+
+
+fn NewReadWriter  (r: *Reader, w: *Writer) -> *ReadWriter { EXT }
+
+fn NewReader  (rd: io.Reader) -> *Reader { EXT }
+
+fn NewReaderSize  (rd: io.Reader, size: int) -> *Reader { EXT }
+
+fn NewScanner  (r: io.Reader) -> *Scanner { EXT }
+
+fn NewWriter  (w: io.Writer) -> *Writer { EXT }
+
+fn NewWriterSize  (w: io.Writer, size: int) -> *Writer { EXT }
+
+fn ScanBytes  (data: [byte], atEOF: bool) -> (int, [byte], error) { EXT }
+
+fn ScanLines  (data: [byte], atEOF: bool) -> (int, [byte], error) { EXT }
+
+fn ScanRunes  (data: [byte], atEOF: bool) -> (int, [byte], error) { EXT }
+
+fn ScanWords  (data: [byte], atEOF: bool) -> (int, [byte], error) { EXT }
+
+impl (self: Reader) {
+
+fn Buffered  () -> int { EXT }
+
+fn Discard  (n: int) -> Result<int> { EXT }
+
+fn Peek  (n: int) -> Result<[byte]> { EXT }
+
+fn Read  (p: [byte]) -> Result<int> { EXT }
+
+fn ReadByte  () -> Result<byte> { EXT }
+
+fn ReadBytes  (delim: byte) -> Result<[byte]> { EXT }
+
+fn ReadLine  () -> ([byte], bool, error) { EXT }
+
+fn ReadRune  () -> (rune, int, error) { EXT }
+
+fn ReadSlice  (delim: byte) -> Result<[byte]> { EXT }
+
+fn ReadString  (delim: byte) -> Result<string> { EXT }
+
+fn Reset  (r: io.Reader) -> () { EXT }
+
+fn Size  () -> int { EXT }
+
+fn UnreadByte  () -> error { EXT }
+
+fn UnreadRune  () -> error { EXT }
+
+fn WriteTo  (w: io.Writer) -> Result<int64> { EXT }
+
+}
+
+impl (self: Scanner) {
+
+fn Buffer  (buf: [byte], max: int) -> () { EXT }
+
+fn Bytes  () -> [byte] { EXT }
+
+fn Err  () -> error { EXT }
+
+fn Scan  () -> bool { EXT }
+
+fn Split  (split: SplitFunc) -> () { EXT }
+
+fn Text  () -> string { EXT }
+
+}
+
+impl (self: Writer) {
+
+fn Available  () -> int { EXT }
+
+fn AvailableBuffer  () -> [byte] { EXT }
+
+fn Buffered  () -> int { EXT }
+
+fn Flush  () -> error { EXT }
+
+fn ReadFrom  (r: io.Reader) -> Result<int64> { EXT }
+
+fn Reset  (w: io.Writer) -> () { EXT }
+
+fn Size  () -> int { EXT }
+
+fn Write  (p: [byte]) -> Result<int> { EXT }
+
+fn WriteByte  (c: byte) -> error { EXT }
+
+fn WriteRune  (r: rune) -> Result<int> { EXT }
+
+fn WriteString  (s: string) -> Result<int> { EXT }
+
+}
+
+type SplitFunc = fn (data: [byte], atEOF: bool) -> (int, [byte], error)
+
+struct ReadWriter{
+// skipping embedded field *Reader,
+// skipping embedded field *Writer
+}
+
+struct Reader{
+
+}
+
+struct Scanner{
+
+}
+
+struct Writer{
+
+}

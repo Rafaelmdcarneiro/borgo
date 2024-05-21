@@ -1,0 +1,98 @@
+fn ExpFloat64  () -> float64 { EXT }
+
+fn Float32  () -> float32 { EXT }
+
+fn Float64  () -> float64 { EXT }
+
+fn Int  () -> int { EXT }
+
+fn Int31  () -> int32 { EXT }
+
+fn Int31n  (n: int32) -> int32 { EXT }
+
+fn Int63  () -> int64 { EXT }
+
+fn Int63n  (n: int64) -> int64 { EXT }
+
+fn Intn  (n: int) -> int { EXT }
+
+fn New  (src: Source) -> *Rand { EXT }
+
+fn NewSource  (seed: int64) -> Source { EXT }
+
+fn NewZipf  (r: *Rand, s: float64, v: float64, imax: uint64) -> *Zipf { EXT }
+
+fn NormFloat64  () -> float64 { EXT }
+
+fn Perm  (n: int) -> [int] { EXT }
+
+fn Read  (p: [byte]) -> Result<int> { EXT }
+
+fn Seed  (seed: int64) -> () { EXT }
+
+fn Shuffle  (n: int, swap: fn (i: int, j: int) -> ()) -> () { EXT }
+
+fn Uint32  () -> uint32 { EXT }
+
+fn Uint64  () -> uint64 { EXT }
+
+impl (self: Rand) {
+
+fn ExpFloat64  () -> float64 { EXT }
+
+fn Float32  () -> float32 { EXT }
+
+fn Float64  () -> float64 { EXT }
+
+fn Int  () -> int { EXT }
+
+fn Int31  () -> int32 { EXT }
+
+fn Int31n  (n: int32) -> int32 { EXT }
+
+fn Int63  () -> int64 { EXT }
+
+fn Int63n  (n: int64) -> int64 { EXT }
+
+fn Intn  (n: int) -> int { EXT }
+
+fn NormFloat64  () -> float64 { EXT }
+
+fn Perm  (n: int) -> [int] { EXT }
+
+fn Read  (p: [byte]) -> Result<int> { EXT }
+
+fn Seed  (seed: int64) -> () { EXT }
+
+fn Shuffle  (n: int, swap: fn (i: int, j: int) -> ()) -> () { EXT }
+
+fn Uint32  () -> uint32 { EXT }
+
+fn Uint64  () -> uint64 { EXT }
+
+}
+
+impl (self: Zipf) {
+
+fn Uint64  () -> uint64 { EXT }
+
+}
+
+struct Rand{
+
+}
+
+interface Source {
+
+  fn Int63 () -> int64
+  fn Seed (seed: int64) -> ()
+}
+
+interface Source64 {
+impl Source
+  fn Uint64 () -> uint64
+}
+
+struct Zipf{
+
+}

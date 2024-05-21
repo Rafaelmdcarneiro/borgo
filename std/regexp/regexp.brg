@@ -1,0 +1,100 @@
+use io
+
+
+fn Compile  (expr: string) -> Result<*Regexp> { EXT }
+
+fn CompilePOSIX  (expr: string) -> Result<*Regexp> { EXT }
+
+fn Match  (pattern: string, b: [byte]) -> Result<bool> { EXT }
+
+fn MatchReader  (pattern: string, r: io.RuneReader) -> Result<bool> { EXT }
+
+fn MatchString  (pattern: string, s: string) -> Result<bool> { EXT }
+
+fn MustCompile  (str: string) -> *Regexp { EXT }
+
+fn MustCompilePOSIX  (str: string) -> *Regexp { EXT }
+
+fn QuoteMeta  (s: string) -> string { EXT }
+
+impl (self: Regexp) {
+
+fn Copy  () -> *Regexp { EXT }
+
+fn Expand  (dst: [byte], template: [byte], src: [byte], match_: [int]) -> [byte] { EXT }
+
+fn ExpandString  (dst: [byte], template: string, src: string, match_: [int]) -> [byte] { EXT }
+
+fn Find  (b: [byte]) -> [byte] { EXT }
+
+fn FindAll  (b: [byte], n: int) -> [[byte]] { EXT }
+
+fn FindAllIndex  (b: [byte], n: int) -> [[int]] { EXT }
+
+fn FindAllString  (s: string, n: int) -> [string] { EXT }
+
+fn FindAllStringIndex  (s: string, n: int) -> [[int]] { EXT }
+
+fn FindAllStringSubmatch  (s: string, n: int) -> [[string]] { EXT }
+
+fn FindAllStringSubmatchIndex  (s: string, n: int) -> [[int]] { EXT }
+
+fn FindAllSubmatch  (b: [byte], n: int) -> [[[byte]]] { EXT }
+
+fn FindAllSubmatchIndex  (b: [byte], n: int) -> [[int]] { EXT }
+
+fn FindIndex  (b: [byte]) -> [int] { EXT }
+
+fn FindReaderIndex  (r: io.RuneReader) -> [int] { EXT }
+
+fn FindReaderSubmatchIndex  (r: io.RuneReader) -> [int] { EXT }
+
+fn FindString  (s: string) -> string { EXT }
+
+fn FindStringIndex  (s: string) -> [int] { EXT }
+
+fn FindStringSubmatch  (s: string) -> [string] { EXT }
+
+fn FindStringSubmatchIndex  (s: string) -> [int] { EXT }
+
+fn FindSubmatch  (b: [byte]) -> [[byte]] { EXT }
+
+fn FindSubmatchIndex  (b: [byte]) -> [int] { EXT }
+
+fn LiteralPrefix  () -> Option<string> { EXT }
+
+fn Longest  () -> () { EXT }
+
+fn Match  (b: [byte]) -> bool { EXT }
+
+fn MatchReader  (r: io.RuneReader) -> bool { EXT }
+
+fn MatchString  (s: string) -> bool { EXT }
+
+fn NumSubexp  () -> int { EXT }
+
+fn ReplaceAll  (src: [byte], repl: [byte]) -> [byte] { EXT }
+
+fn ReplaceAllFunc  (src: [byte], repl: fn (param0: [byte]) -> [byte]) -> [byte] { EXT }
+
+fn ReplaceAllLiteral  (src: [byte], repl: [byte]) -> [byte] { EXT }
+
+fn ReplaceAllLiteralString  (src: string, repl: string) -> string { EXT }
+
+fn ReplaceAllString  (src: string, repl: string) -> string { EXT }
+
+fn ReplaceAllStringFunc  (src: string, repl: fn (param0: string) -> string) -> string { EXT }
+
+fn Split  (s: string, n: int) -> [string] { EXT }
+
+fn String  () -> string { EXT }
+
+fn SubexpIndex  (name: string) -> int { EXT }
+
+fn SubexpNames  () -> [string] { EXT }
+
+}
+
+struct Regexp{
+
+}

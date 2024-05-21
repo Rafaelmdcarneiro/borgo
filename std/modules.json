@@ -1,0 +1,134 @@
+[
+  {
+    "path": "core",
+    "name": "std"
+  },
+  {
+    "path": "errors",
+    "name": "errors"
+  },
+  {
+    "path": "context",
+    "name": "context"
+  },
+  {
+    "path": "time",
+    "name": "time"
+  },
+  {
+    "path": "syscall",
+    "name": "syscall"
+  },
+  {
+    "path": "unicode",
+    "name": "unicode"
+  },
+  {
+    "path": "strconv",
+    "name": "strconv"
+  },
+  {
+    "path": "io",
+    "name": "io"
+  },
+  {
+    "path": "strings",
+    "name": "strings"
+  },
+  {
+    "path": "bytes",
+    "name": "bytes"
+  },
+  {
+    "path": "regexp",
+    "name": "regexp"
+  },
+  {
+    "path": "io/fs",
+    "name": "io.fs"
+  },
+  {
+    "path": "fmt",
+    "name": "fmt"
+  },
+  {
+    "path": "unsafe",
+    "name": "unsafe"
+  },
+  {
+    "path": "reflect",
+    "name": "reflect"
+  },
+  {
+    "path": "log",
+    "name": "log"
+  },
+  {
+    "path": "math",
+    "name": "math"
+  },
+  {
+    "path": "math/rand",
+    "name": "math.rand"
+  },
+  {
+    "path": "os",
+    "name": "os"
+  },
+  {
+    "path": "sync",
+    "name": "sync"
+  },
+  {
+    "path": "bufio",
+    "name": "bufio"
+  },
+  {
+    "path": "testing",
+    "name": "testing"
+  },
+  {
+    "path": "hash",
+    "name": "hash"
+  },
+  {
+    "path": "crypto",
+    "name": "crypto"
+  },
+  {
+    "path": "crypto/x509",
+    "name": "crypto.x509"
+  },
+  {
+    "path": "crypto/tls",
+    "name": "crypto.tls"
+  },
+  {
+    "path": "net",
+    "name": "net"
+  },
+  {
+    "path": "net/netip",
+    "name": "net.netip"
+  },
+  {
+    "path": "net/textproto",
+    "name": "net.textproto"
+  },
+  {
+    "path": "net/url",
+    "name": "net.url"
+  },
+  {
+    "path": "mime/multipart",
+    "name": "mime.multipart"
+  },
+  {
+    "path": "net/http",
+    "name": "net.http"
+  },
+  {
+    "path": "net/http/httptest",
+    "name": "net.http.httptest"
+  }
+]

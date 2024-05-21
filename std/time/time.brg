@@ -1,0 +1,223 @@
+fn After  (d: Duration) -> Receiver<Time> { EXT }
+
+fn AfterFunc  (d: Duration, f: fn () -> ()) -> *Timer { EXT }
+
+fn Date  (year: int, month: Month, day: int, hour: int, min: int, sec: int, nsec: int, loc: *Location) -> Time { EXT }
+
+fn FixedZone  (name: string, offset: int) -> *Location { EXT }
+
+fn LoadLocation  (name: string) -> Result<*Location> { EXT }
+
+fn LoadLocationFromTZData  (name: string, data: [byte]) -> Result<*Location> { EXT }
+
+fn NewTicker  (d: Duration) -> *Ticker { EXT }
+
+fn NewTimer  (d: Duration) -> *Timer { EXT }
+
+fn Now  () -> Time { EXT }
+
+fn Parse  (layout: string, value: string) -> Result<Time> { EXT }
+
+fn ParseDuration  (s: string) -> Result<Duration> { EXT }
+
+fn ParseInLocation  (layout: string, value: string, loc: *Location) -> Result<Time> { EXT }
+
+fn Since  (t: Time) -> Duration { EXT }
+
+fn Sleep  (d: Duration) -> () { EXT }
+
+fn Tick  (d: Duration) -> Receiver<Time> { EXT }
+
+fn Unix  (sec: int64, nsec: int64) -> Time { EXT }
+
+fn UnixMicro  (usec: int64) -> Time { EXT }
+
+fn UnixMilli  (msec: int64) -> Time { EXT }
+
+fn Until  (t: Time) -> Duration { EXT }
+
+impl (self: Duration) {
+
+fn Abs  () -> Duration { EXT }
+
+fn Hours  () -> float64 { EXT }
+
+fn Microseconds  () -> int64 { EXT }
+
+fn Milliseconds  () -> int64 { EXT }
+
+fn Minutes  () -> float64 { EXT }
+
+fn Nanoseconds  () -> int64 { EXT }
+
+fn Round  (m: Duration) -> Duration { EXT }
+
+fn Seconds  () -> float64 { EXT }
+
+fn String  () -> string { EXT }
+
+fn Truncate  (m: Duration) -> Duration { EXT }
+
+}
+
+impl (self: Location) {
+
+fn String  () -> string { EXT }
+
+}
+
+impl (self: Month) {
+
+fn String  () -> string { EXT }
+
+}
+
+impl (self: ParseError) {
+
+fn Error  () -> string { EXT }
+
+}
+
+impl (self: Ticker) {
+
+fn Reset  (d: Duration) -> () { EXT }
+
+fn Stop  () -> () { EXT }
+
+}
+
+impl (self: Time) {
+
+fn Add  (d: Duration) -> Time { EXT }
+
+fn AddDate  (years: int, months: int, days: int) -> Time { EXT }
+
+fn After  (u: Time) -> bool { EXT }
+
+fn AppendFormat  (b: [byte], layout: string) -> [byte] { EXT }
+
+fn Before  (u: Time) -> bool { EXT }
+
+fn Clock  () -> int { EXT }
+
+fn Date  () -> (int, Month, int) { EXT }
+
+fn Day  () -> int { EXT }
+
+fn Equal  (u: Time) -> bool { EXT }
+
+fn Format  (layout: string) -> string { EXT }
+
+fn GoString  () -> string { EXT }
+
+fn GobDecode  (data: [byte]) -> error { EXT }
+
+fn GobEncode  () -> Result<[byte]> { EXT }
+
+fn Hour  () -> int { EXT }
+
+fn ISOWeek  () -> int { EXT }
+
+fn In  (loc: *Location) -> Time { EXT }
+
+fn IsDST  () -> bool { EXT }
+
+fn IsZero  () -> bool { EXT }
+
+fn Local  () -> Time { EXT }
+
+fn Location  () -> *Location { EXT }
+
+fn MarshalBinary  () -> Result<[byte]> { EXT }
+
+fn MarshalJSON  () -> Result<[byte]> { EXT }
+
+fn MarshalText  () -> Result<[byte]> { EXT }
+
+fn Minute  () -> int { EXT }
+
+fn Month  () -> Month { EXT }
+
+fn Nanosecond  () -> int { EXT }
+
+fn Round  (d: Duration) -> Time { EXT }
+
+fn Second  () -> int { EXT }
+
+fn String  () -> string { EXT }
+
+fn Sub  (u: Time) -> Duration { EXT }
+
+fn Truncate  (d: Duration) -> Time { EXT }
+
+fn UTC  () -> Time { EXT }
+
+fn Unix  () -> int64 { EXT }
+
+fn UnixMicro  () -> int64 { EXT }
+
+fn UnixMilli  () -> int64 { EXT }
+
+fn UnixNano  () -> int64 { EXT }
+
+fn UnmarshalBinary  (data: [byte]) -> error { EXT }
+
+fn UnmarshalJSON  (data: [byte]) -> error { EXT }
+
+fn UnmarshalText  (data: [byte]) -> error { EXT }
+
+fn Weekday  () -> Weekday { EXT }
+
+fn Year  () -> int { EXT }
+
+fn YearDay  () -> int { EXT }
+
+fn Zone  () -> (string, int) { EXT }
+
+fn ZoneBounds  () -> Time { EXT }
+
+}
+
+impl (self: Timer) {
+
+fn Reset  (d: Duration) -> bool { EXT }
+
+fn Stop  () -> bool { EXT }
+
+}
+
+impl (self: Weekday) {
+
+fn String  () -> string { EXT }
+
+}
+
+struct Duration(int64)
+
+struct Month(int)
+
+struct Weekday(int)
+
+struct Location{
+
+}
+
+struct ParseError{
+  Layout: string,
+  Value: string,
+  LayoutElem: string,
+  ValueElem: string,
+  Message: string
+}
+
+struct Ticker{
+  C: Receiver<Time>
+}
+
+struct Time{
+
+}
+
+struct Timer{
+  C: Receiver<Time>
+}

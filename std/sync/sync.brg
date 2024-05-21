@@ -1,0 +1,113 @@
+fn NewCond  (l: Locker) -> *Cond { EXT }
+
+impl (self: Cond) {
+
+fn Broadcast  () -> () { EXT }
+
+fn Signal  () -> () { EXT }
+
+fn Wait  () -> () { EXT }
+
+}
+
+impl (self: Map) {
+
+fn Delete  (key: any) -> () { EXT }
+
+fn Load  (key: any) -> Option<any> { EXT }
+
+fn LoadAndDelete  (key: any) -> Option<any> { EXT }
+
+fn LoadOrStore  (key: any, value: any) -> Option<any> { EXT }
+
+fn Range  (f: fn (key: any, value: any) -> bool) -> () { EXT }
+
+fn Store  (key: any, value: any) -> () { EXT }
+
+}
+
+impl (self: Mutex) {
+
+fn Lock  () -> () { EXT }
+
+fn TryLock  () -> bool { EXT }
+
+fn Unlock  () -> () { EXT }
+
+}
+
+impl (self: Once) {
+
+fn Do  (f: fn () -> ()) -> () { EXT }
+
+}
+
+impl (self: Pool) {
+
+fn Get  () -> any { EXT }
+
+fn Put  (x: any) -> () { EXT }
+
+}
+
+impl (self: RWMutex) {
+
+fn Lock  () -> () { EXT }
+
+fn RLock  () -> () { EXT }
+
+fn RLocker  () -> Locker { EXT }
+
+fn RUnlock  () -> () { EXT }
+
+fn TryLock  () -> bool { EXT }
+
+fn TryRLock  () -> bool { EXT }
+
+fn Unlock  () -> () { EXT }
+
+}
+
+impl (self: WaitGroup) {
+
+fn Add  (delta: int) -> () { EXT }
+
+fn Done  () -> () { EXT }
+
+fn Wait  () -> () { EXT }
+
+}
+
+struct Cond{
+  L: Locker
+}
+
+interface Locker {
+
+  fn Lock () -> ()
+  fn Unlock () -> ()
+}
+
+struct Map{
+
+}
+
+struct Mutex{
+
+}
+
+struct Once{
+
+}
+
+struct Pool{
+  New: fn () -> any
+}
+
+struct RWMutex{
+
+}
+
+struct WaitGroup{
+
+}
